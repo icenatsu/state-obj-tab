@@ -16,17 +16,15 @@ const Test = () => {
   function useTestM() {
     const [state, setState] = useState({
       items: [],
-      loading: true,
     });
 
     useEffect(() => {
       try {
         setState({
           items: tab,
-          loading: false,
         });
       } catch (e) {
-        setState((s) => ({ ...s, loading: false }));
+        console.log(e);
       }
     }, []);
 
