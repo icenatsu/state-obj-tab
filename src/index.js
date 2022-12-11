@@ -7,10 +7,10 @@ import StateObjet from "./components/StateObjet/StateObjet";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <StateIndividuel />
-    <br />
-    <br />
-    <br />
     <StateObjet />
+    <br />
+    <br />
+    <br />
+    <StateIndividuel />
   </>
 );
