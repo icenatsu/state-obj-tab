@@ -17,6 +17,14 @@ const Test = () => {
   function useTestM() {
     const [currentTab, setcurrentTab] = useState([]);
 
+    const modify = () => {
+      setcurrentTab((p) => {
+        const newState = [...p];
+        newState.pop();
+        return newState;
+      });
+    };
+
     useEffect(() => {
       try {
         setcurrentTab(tab);
@@ -25,18 +33,13 @@ const Test = () => {
       }
     }, []);
 
-    return [currentTab, setcurrentTab];
+    return [currentTab, modify];
   }
 
-  const [currentTab, setcurrentTab] = useTestM();
+  const [currentTab, modify] = useTestM();
 
   const modifLeTableau = () => {
-    setcurrentTab((p) => {
-      // console.log(p);
-      const newState = p;
-      newState.pop();
-      return newState;
-    });
+    modify();
   };
 
   console.log(currentTab);
